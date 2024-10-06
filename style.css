@@ -9,8 +9,10 @@
     box-sizing: border-box;
 }
 body {
-    background-color: var(--main-bg-color);
+    /* https://ics.media/entry/200317/#各osのフォント指定はどれがいいか */
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     margin: unset;
+    background-color: var(--main-bg-color);
 }
 main, header {
     max-width: 1000px;
@@ -20,26 +22,18 @@ img {
     display: block;
     width: 100%;
 }
-h1, h2, h3, p {
+h1, h2, h3, p, ol, dl, dd {
     margin: unset;
-}
-h1 {
-    width: 160px;
-    padding-top: 60px;
-    padding-bottom: 15px;
+    padding: unset;
 }
 h2, h3 {
-    font-family: Meiryo;
     font-weight: bold;
     font-size: 18px;
     color: var(--font-color);
-    line-height: 1;
 }
 p, li, dt, dd, a, a:visited {
-    font-family: Meiryo;
     font-size: 14px;
     color: var(--font-color);
-    line-height: 1.2;
 }
 p.copy {
     font-size: 10px;
@@ -52,13 +46,77 @@ div.container {
 
 /* 小さい画面 */
 header {
+    margin-top: 60px;
+    margin-bottom: 60px;
     padding-right: 10px;
     padding-left: 10px;
 }
-section.index {
-    background-color: var(--sub-bg-color);
+header h1 {
+    width: 160px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+main {
     margin-top: 60px;
     margin-bottom: 60px;
+}
+main section.index {
+    background-color: var(--sub-bg-color);
+    padding-top: 30px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 30px;
+}
+main section h2 {
+    padding-bottom: 10px;
+}
+main section.index ol {
+    padding-left: 20px;
+}
+main section.index ol li:not(:last-child) {
+    padding-bottom: 20px;
+}
+main section.detail {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 30px;
+}
+main section.detail img {
+    padding-bottom: 25px;
+}
+main section.detail h3 {
+    padding-bottom: 20px;
+}
+main section.detail dl {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+main section.detail dl div {
+    display: flex;
+}
+main section.detail dt {
+    width: 25%;
+}
+main section.detail p {
+    padding-bottom: 20px;
+}
+main section.detail a {
+    display: inline-block;
+    padding-bottom: 25px;
+}
+footer {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-right: 40px;
+    padding-left: 40px;
 }
 
 
@@ -66,5 +124,12 @@ section.index {
 @media (min-width: 1024px) {
 header {
     padding: unset;
+}
+main section.detail img {
+    width: 270px;
+    margin-right: 60px;
+}
+main section.detail h2 + div {
+    display: flex;
 }
 }
